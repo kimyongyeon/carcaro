@@ -1,0 +1,142 @@
+/*
+*	2010.09.30 make by ahmax(ahmax95@gmail.com)
+*	http://beans9.tistory.com
+*/
+.calCss {
+	font-size: 8pt;
+	text-align: right;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.daySun {
+	background-color: #FBFBFB;
+	border: 1px solid #CBC7BD;
+	padding: 2px 4px 0px 3px;
+	color: #FF0000;
+}
+
+.daySat {
+	background-color: #FBFBFB;
+	border: 1px solid #CBC7BD;
+	padding: 2px 4px 0px 3px;
+	color: #368CFE;
+}
+
+.dayEv {
+	background-color: #FBFBFB;
+	border: 1px solid #CBC7BD;
+	padding: 2px 4px 0px 3px;
+}
+
+.dayOther {
+	background-color: #FBFBFB;
+	border: 1px solid #CBC7BD;
+	padding: 2px 4px 0px 3px;
+	color: #CBC7BD;
+}
+
+.dayToday {
+	background-color: #368CFE;
+	border: 1px solid #CBC7BD;
+	font-weight: bold;
+	padding: 2px 4px 0px 3px;
+	color: white;
+}
+
+.selDay {
+	background-color: #CF4040;
+	border: 1px solid #CBC7BD;
+	font-weight: bold;
+	padding: 2px 4px 0px 3px;
+	text-decoration: underline;
+	color: white;
+}
+
+.onDay {
+	background-color: #006060;
+	border: 1px solid #4B22C0;
+	padding: 2px 4px 0px 3px;
+	cursor: pointer;
+	color: white;
+}
+
+.divBody {
+	border: 1px solid #DDDDDD;
+	margin: 1px;
+	background-color: #ECEADF;
+	width: 177px;
+	position: absolute;
+	display: none;
+}
+
+.divHead {
+	border: 1px solid #D4D1BF;
+	background-color: #ffffff;
+}
+
+.divHeadLeft {
+	width: 11%;
+	padding-top: 3px;
+	font-size: 8pt;
+	color: #CF4040;
+	text-align: right;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.divHeadOnleft {
+	width: 11%;
+	padding-top: 3px;
+	font-size: 8pt;
+	color: #18CCA8;
+	text-align: right;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.divHeadRigth {
+	width: 11%;
+	padding-top: 3px;
+	font-size: 8pt;
+	color: #CF4040;
+	text-align: left;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.divHeadOnRigth {
+	width: 11%;
+	padding-top: 3px;
+	font-size: 8pt;
+	color: #18CCA8;
+	text-align: left;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.divHeadCenter {
+	padding-top: 2px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tBtn {
+	border: 1px solid #CBC7BD;
+	background-color: white;
+	padding: 4px 4px 2px 4px;
+	font-size: 8pt;
+}
+
+.tBtnOn {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.imageIcon {
+	padding-top: 2px;
+	padding-left: 2px;
+	position: absolute;
+	cursor: hand;
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<project name="carcaro" default="reploy" basedir=".">
+
+	<tstamp>
+		<format property="timestamp.isoformat" pattern="yyyy-MM-dd HH:mm:ss" locale="ko" />
+	</tstamp>
+
+	<property name="projectName" value="carcaro" />
+	<property name="version" value="0.1" />
+
+	<!--sh 寃쎈줈: C:\Android\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145 -->
+	<!--sh 寃쎈줈 : C:\Android\Tomcat -->
+	
+	<!-- 뉴규꺼?
+	<property name="ant.home" location="F:\java_web\eclipse-jee-helios-SR2-win32\eclipse\plugins\org.apache.ant_1.7.1.v20100518-1145" />
+	<property name="tomcat.home" location="F:\java_web\apache-tomcat-6.0.29" />
+	-->
+	
+	<!--효진이꺼
+	<property name="ant.home" location="F:\DBeclipse\wtp-eclipse\eclipse\plugins\org.apache.ant_1.7.0.v200706080842" />
+	<property name="tomcat.home" location="F:\DBeclipse\apache-tomcat-6.0.32\apache-tomcat-6.0.32" />
+	-->
+	
+	<property name="ant.home" location="/Users/zxcasd/work/eclipse/plugins/org.apache.ant_1.7.1.v20100518-1145" />
+	<property name="tomcat.home" location="/Users/zxcasd/android_dev/apache-tomcat-6.0.29" />
+	
+	<!-- Configure the directory into which the web application is built -->
+	<property name="build" value="${basedir}/WebContent" />
+	<property name="dist" value="${basedir}/dist" />
+
+	<!-- Configure the context path for this application -->
+	<property name="path" value="/carcaro" />
+
+	<!-- Configure properties to access the Manager application -->
+	<property name="url" value="http://vcarcaro.cafe24.com:8080/manager" />
+	<property name="username" value="carcaro" />
+	<property name="password" value="1carcaro" />
+
+
+	<path id="jspaser.classpath">
+		<fileset dir="${tomcat.home}/lib/">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${tomcat.home}/bin">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${ant.home}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- tomcat���쒖뼱�섍린 �꾪븳 task �좎뼵-->
+	<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="jspaser.classpath" />
+	<taskdef name="list" classname="org.apache.catalina.ant.ListTask" classpathref="jspaser.classpath" />
+	<taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" classpathref="jspaser.classpath" />
+	<taskdef name="resources" classname="org.apache.catalina.ant.ResourcesTask" classpathref="jspaser.classpath" />
+	<taskdef name="roles" classname="org.apache.catalina.ant.RolesTask" classpathref="jspaser.classpath" />
+	<taskdef name="start" classname="org.apache.catalina.ant.StartTask" classpathref="jspaser.classpath" />
+	<taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpathref="jspaser.classpath" />
+	<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="jspaser.classpath" />
+
+	<target name="create-manifest" description="Create MANIFEST.MF file">
+		<manifest file="MANIFEST.MF">
+			<attribute name="Created-By" value="Kimheeseok" />
+			<attribute name="Created-On" value="${timestamp.isoformat}" />
+			<attribute name="susomoon-Version" value="${projectName}" />
+			<attribute name="susomoon-Build" value="${version}" />
+		</manifest>
+	</target>
+
+	<!-- tomcat manager媛�援щ룞�섍퀬 �덉뼱���� -->
+	<!-- Executable Targets -->
+	<target name="compile" description="Compile web application">
+		<!-- ... construct web application in ${build} subdirectory, and
+            generated a ${path}.war ... -->
+	</target>
+
+	<target name="war" depends="compile">
+		<delete file="${dist}${path}.war" />
+		<mkdir dir="${dist}"/>
+		<war destfile="${dist}${path}.war" basedir="${build}" includes="**/*" compress="true"/>
+	</target>
+
+	<target name="deploy" description="Install web application" depends="war">
+		<deploy url="${url}" username="${username}" password="${password}" path="${path}" war="file:${dist}${path}.war" />
+	</target>
+
+	<target name="reload" description="Reload web application" depends="compile">
+		<reload url="${url}" username="${username}" password="${password}" path="${path}" />
+	</target>
+
+	<target name="undeploy" description="Remove web application">
+		<undeploy url="${url}" username="${username}" password="${password}" path="${path}" failonerror="false" />
+	</target>
+
+	<target name="reploy" description="undeploy and deploy " depends="undeploy, deploy" >
+	</target>
+
+
+</project>

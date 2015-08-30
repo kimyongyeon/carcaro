@@ -1,0 +1,267 @@
+/***************************************************** 
+
+IMPORTANT!!!!!
+ STYLE.CSS MUST BE LOCATED IN FOLDER "/carcaro/css" 
+
+******************************************************/
+@charset "utf-8";
+
+html,body,form,fieldset,h1,h2,h3,h4,h5,h6,p,pre,blockquote,ul,ol,dl,address
+	{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #fff;
+	font: 0.75em/1.5 Dotum, Verdana, Arial, Helvetica, sans-serif;
+}
+
+p {
+	text-align: center;
+}
+
+a:link {
+	color: #7C7C7C;
+	text-decoration: none;
+	border-bottom: 1px dotted #ffbac8;
+}
+
+a:visited {
+	color: #7C7C7C;
+	border-bottom: none;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover,a:focus {
+	color: #f03b58;
+	border-bottom: 1px solid #f03b58;
+	text-decoration: none;
+}
+
+table a,table a:link,table a:visited {
+	border: none;
+}
+
+img {
+	border: 0;
+	margin-top: .5em;
+}
+
+img,a {
+	border: 0;
+	selector-dummy: expression(this.hideFocus = true);
+}
+
+table {
+	font: 1em Verdana, Dotum, Arial, Helvetica, sans-serif;
+	width: 400px;
+	border-top: 1px solid #e5eff8;
+	border-right: 1px solid #e5eff8;
+	margin: 1em auto;
+	border-collapse: collapse;
+}
+
+table.res {
+	width: 90%;
+	font: 1em Verdana, Dotum, Arial, Helvetica, sans-serif;
+	border-top: 1px solid #e5eff8;
+	border-right: 1px solid #e5eff8;
+	margin: 1em auto;
+	border-collapse: collapse;
+}
+
+table.webAdmin {
+	width: 1480px;
+	border-top: 1px solid #e5eff8;
+	border-right: 1px solid #e5eff8;
+	margin: 1em auto;
+	border-collapse: collapse;
+}
+
+caption {
+	color: #9ba9b4;
+	font-size: 0.75em;
+	letter-spacing: .1em;
+	margin: 1em 0 0 0;
+	padding: 0;
+	caption-side: top;
+	text-align: center;
+}
+
+tr.element:hover {
+	background: #bfe5fe;
+	cursor: pointer;
+}
+
+tr.odd td {
+	background: #f7fbff
+}
+
+tr.odd .column1 {
+	background: #f4f9fe;
+}
+
+.column1 {
+	background: #f9fcfe;
+}
+
+td {
+	color: #678197;
+	border-bottom: 1px solid #e5eff8;
+	border-left: 1px solid #e5eff8;
+	padding: .3em 1em;
+	text-align: center;
+}
+
+th {
+	font-weight: bold;
+	color: #678197;
+	text-align: left;
+	border-bottom: 1px solid #e5eff8;
+	border-left: 1px solid #e5eff8;
+	padding: .3em 1em;
+}
+
+thead th {
+	background: #f4f9fe;
+	text-align: center;
+	font: bold 1em "Century Gothic", "Trebuchet MS", Arial, Helvetica,
+		sans-serif;
+	color: #66a3d3
+}
+
+tfoot th {
+	text-align: center;
+	background: #f4f9fe;
+}
+
+tfoot th strong {
+	font: bold 1.2em "Century Gothic", "Trebuchet MS", Arial, Helvetica,
+		sans-serif;
+	margin: .5em .5em .5em 0;
+	color: #66a3d3;
+}
+
+tfoot th em {
+	color: #f03b58;
+	font-weight: bold;
+	font-size: 1.1em;
+	font-style: normal;
+}
+
+/* ----------- errormsg ----------- */
+#errormsg {
+	border: solid 1px #ff3333;
+	background: #ffffcc;
+	color: #ff3333;
+}
+
+/*---------- FORM CSS ---------------*/
+form,button {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.spacer {
+	clear: both;
+	height: 1px;
+}
+/* ----------- My Form ----------- */
+.myform {
+	margin: 0 auto;
+	width: 400px;
+	padding: 14px;
+}
+
+.pager a {
+	font-size: 1.3em;
+}
+
+/* ----------- stylized ----------- */
+#stylized {
+	font: 1em Verdana, Dotum, Arial, Helvetica, sans-serif;
+	background: #ffffff;
+}
+
+#stylized h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+#stylized p {
+	color: #666666;
+	margin-bottom: 20px;
+	border-bottom: solid 1px #b7ddf2;
+	padding-bottom: 10px;
+}
+
+#stylized label {
+	display: block;
+	font-weight: bold;
+	text-align: right;
+	width: 120px;
+	float: left;
+}
+
+#stylized .small {
+	color: #666666;
+	display: block;
+	font-size: 0.5em;
+	font-weight: normal;
+	text-align: right;
+	width: 120px;
+}
+
+#stylized input {
+	font-size: 1em;
+	padding: 4px 2px;
+	border: solid 1px #aacfe4;
+	/* width:120px; */
+	margin: 4px 4px 4px 4px;
+}
+
+#stylized button {
+	clear: both;
+	margin-left: 80px;
+	width: 125px;
+	height: 31px;
+	background: #666666;
+	text-align: center;
+	line-height: 31px;
+	color: #FFFFFF;
+	font-size: 0.7em;
+	font-weight: bold;
+}
+
+#stylized button:hover {
+	clear: both;
+	margin-left: 80px;
+	width: 125px;
+	height: 31px;
+	background: #555555;
+	text-align: center;
+	line-height: 31px;
+	color: #FAFAFA;
+	font-size: 0.7em;
+	font-weight: bold;
+}
+
+/* ----------- ul/li ----------- */
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+li {
+	width: 100px;
+	margin: 0 0 0 0;
+	border: 0;
+	float: left;
+}
+

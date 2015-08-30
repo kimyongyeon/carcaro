@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>carcaro</display-name>
+	<context-param>
+		<param-name>debug</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<filter>
+		<filter-name>UTF8Filter</filter-name>
+		<filter-class>carcaro.UTF8Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UTF8Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>LoginCheck</filter-name>
+		<filter-class>carcaro.LoginCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginCheck</filter-name>
+		<url-pattern>/ccr</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>carcaro</servlet-name>
+		<servlet-class>carcaro.MainServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>carcaro</servlet-name>
+		<url-pattern>/appccr</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ccr</servlet-name>
+		<servlet-class>carcaro.WebpageServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ccr</servlet-name>
+		<url-pattern>/ccr</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>vcall</servlet-name>
+		<servlet-class>carcaro.vcall.VCallServlet</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>vcall</servlet-name>
+		<url-pattern>/vcall</url-pattern>
+	</servlet-mapping>
+</web-app>

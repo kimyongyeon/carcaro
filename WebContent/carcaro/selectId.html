@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ID 선택</title>
+<script type="text/javascript">
+
+function selectId(obj){
+	
+	var id = obj.value;
+	window.close();
+	window.opener.selectDriverIdFromPopup(id);
+}
+
+function onLoad(){
+	var parent = window.opener;
+	var num = parent.ids;
+	var list = parent.idsArray;
+	list = list.split(",").join("");
+	list = list.replace("[","");
+	list = list.replace("]","");
+	list = list.split(' ');
+	
+	var msg = parent.msg1
+	document.write(msg);
+	
+	for(var i=0; i<num; i++) createRadio(list[i]);
+// <input name=id type="radio" value="1" onclick="selectId(this);" />
+}
+
+function createRadio(value)
+{
+    var obj = document.createElement("input");    
+    obj.setAttribute("type","radio");
+    obj.setAttribute("id","id");
+    obj.setAttribute("value",value);
+	obj.setAttribute("onclick","selectId(this);");
+    document.body.appendChild(obj);  
+    document.write(value+"<br>");
+}
+
+</script>
+</head>
+<body>
+
+</body>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+  onLoad();  // the name of the function that cycles through the slide show.
+//-->
+</script>
+</html>
+
+
